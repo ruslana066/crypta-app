@@ -10,11 +10,9 @@ import News from './News';
 
 const Homepage = () => {
 
-  const {data, isFetching} = useGetCryptosQuery()
+  const {data, isFetching} = useGetCryptosQuery(10)
   
   const globalStats = data?.data?.stats
-
-  console.log(globalStats)
 
   if(isFetching) {
     return ('feathing')
@@ -26,12 +24,12 @@ const Homepage = () => {
       Global Crypto Stats
     </Typography.Title>
       <Row>
-          <Col span={12} > <Statistic title="Total cryptos" value={globalStats.total} /> </Col>
-          <Col span={12} > <Statistic title="Total Exschenges" value={globalStats.totalExchanges} /> </Col>
-          <Col span={12} > <Statistic title="Total Marcet Cap" value={globalStats.totalMarketCap} /> </Col>
-          <Col span={12} > <Statistic title="Total 24h valume" value={globalStats.total24hVolume} /> </Col>
-          <Col span={12} > <Statistic title="Total Marcets" value={globalStats.totalMarkets} /> </Col>
-          <Col span={12} > <Statistic title="Total cryptocurrencies" value={globalStats.totalCoins} /> </Col>
+          <Col span={12} > <Statistic title="Total cryptos" value={globalStats?.total} /> </Col>
+          <Col span={12} > <Statistic title="Total Exschenges" value={globalStats?.totalExchanges} /> </Col>
+          <Col span={12} > <Statistic title="Total Marcet Cap" value={globalStats?.totalMarketCap} /> </Col>
+          <Col span={12} > <Statistic title="Total 24h valume" value={globalStats?.total24hVolume} /> </Col>
+          <Col span={12} > <Statistic title="Total Marcets" value={globalStats?.totalMarkets} /> </Col>
+          <Col span={12} > <Statistic title="Total cryptocurrencies" value={globalStats?.totalCoins} /> </Col>
       </Row>
 
       <div  className='home-heading-container'>
@@ -39,7 +37,7 @@ const Homepage = () => {
           <Typography.Title level={3}><Link to="/cryptocurrencies">show more</Link></Typography.Title>
       </div>
 
-      <Cryptocurrencies />
+      <Cryptocurrencies simplified/>
 
       <div  className='home-heading-container'>
           <Typography.Title level={2}>Lastests news</Typography.Title>

@@ -376,3 +376,15 @@ width: 70%;
     padding: 20px;
     align-items: center;
 }
+.flex{
+    display: flex;
+}
+.flex-direction{
+    flex-direction: column;
+}
+.div-p{
+    width: 50%;
+}
+.m{
+    margin: 24px;
+}
